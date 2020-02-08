@@ -17,11 +17,14 @@ class App extends React.Component {
     this.setState({isLoading: true}, () => 
     axios
     .get("https://evening-mountain-35471.herokuapp.com/todos")
-    .then(res => 
+    .then(res => {
       context.setState({
         todos: res.data,
         isLoading: false
-      })
+      });
+      console.log(res.data)
+      console.log(this.state)
+    }
       )
     )
   }
